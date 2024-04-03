@@ -20,7 +20,7 @@ public class LoginPage {
 
 	// actions
 
-	public String validateLoginPageTitle() {
+	public String validatePageTitle() {
 		return driver.getTitle();
 	}
 

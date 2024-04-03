@@ -1,11 +1,21 @@
 package com.adactinhotel.qa.pages;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class SearchHotelPage {
 	private WebDriver driver;
+	LocalDate currentDate = LocalDate.now();
+    LocalDate currentDateMinus2Days = currentDate.minusDays(2);
+    LocalDate currentDatePlus2Days = currentDate.plusDays(2);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    String formattedDate = currentDate.format(formatter);
+    String formattedCurrentDateMinus2Days = currentDateMinus2Days.format(formatter);
+    String formattedCurrentDatePlus2Days = currentDatePlus2Days.format(formatter);
 
 	private By location = By.xpath("//*[@id=\"location\"]");
 	private By hotels = By.xpath("//*[@id=\"hotels\"]");
@@ -40,12 +50,14 @@ public class SearchHotelPage {
 		roomtypes.selectByIndex(1);
 	}
 	
-	public void enterdate(String checkindate, String checkoutdate) {
+	public void enterdate()  {
 		driver.findElement(checkInDate).clear();
-		driver.findElement(checkInDate).sendKeys(checkindate);
-		driver.findElement(checkOutDate).clear();
-		driver.findElement(checkOutDate).sendKeys(checkoutdate);
+		driver.findElement(checkInDate).sendKeys(formattedDate);
 		
+		driver.findElement(checkOutDate).clear();
+		driver.findElement(checkOutDate).sendKeys(formattedCurrentDatePlus2Days);
+		
+	
 	}
 
 	public void submit() {

@@ -21,8 +21,8 @@ public class LoginPageSteps {
 
 	@When("User gets the title of the page")
 	public void user_gets_the_title_of_the_page() {
-		title = loginPage.validateLoginPageTitle();
-		System.out.println("page title is" + title);
+		title = loginPage.validatePageTitle();
+		System.out.println("page title is " + title);
 	}
 
 	@Then("page title should be {string}")
@@ -49,10 +49,9 @@ public class LoginPageSteps {
 
 	@Then("User gets the title of the search hotel page")
 	public void user_should_be_redirected_to_the_search_hotel_page() {
-		title = loginPage.validateLoginPageTitle();
+		title = loginPage.validatePageTitle();
 		System.out.println("page title is" + title);
 		Assert.assertEquals(title, "Adactin.com - Search Hotel");
 
 	}
-
 }

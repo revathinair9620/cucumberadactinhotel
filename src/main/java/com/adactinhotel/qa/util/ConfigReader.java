@@ -1,9 +1,11 @@
 package com.adactinhotel.qa.util;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
+
+
 
 public class ConfigReader {
 	private Properties prop;
@@ -29,5 +31,7 @@ public class ConfigReader {
 
 	}
 	
-
 }
+	
+
+

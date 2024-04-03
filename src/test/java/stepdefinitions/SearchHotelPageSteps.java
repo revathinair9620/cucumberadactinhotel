@@ -3,6 +3,8 @@ package stepdefinitions;
 import java.util.List;
 import java.util.Map;
 
+import org.testng.Assert;
+
 import com.adactinhotel.qa.factory.DriverFactory;
 import com.adactinhotel.qa.pages.LoginPage;
 import com.adactinhotel.qa.pages.SearchHotelPage;
@@ -48,16 +50,19 @@ public class SearchHotelPageSteps {
 	public void user_select_the_roomtype_from_dropdown() {
 		searchHotelPage.select_roomtypeviadropdown();
 	}
-/*
+
 	@Then("User enters the checkindate as current date")
 	public void user_enters_the_checkindate_as_current_date() {
-		searchHotelPage.enterdate(null, null);
+		searchHotelPage.enterdate();
 	}
 
 	@Then("User enters the checkoutdate as current dateplus2days")
 	public void user_enters_the_checkoutdate_as_current_dateplus2days() {
+		searchHotelPage.enterdate();
+	}
+	
 
-	}*/
+
 
 	@Then("User clicks on the submit button")
 	public void user_clicks_on_the_submit_button() {
@@ -67,6 +72,9 @@ public class SearchHotelPageSteps {
 
 	@Then("User gets the title of the select hotel page")
 	public void user_gets_the_title_of_the_select_hotel_page() {
+		String title = searchHotelPage.validateSearchPageTitle();
+		System.out.println("page title is " + title);
+		Assert.assertEquals(title, "Adactin.com - Select Hotel");
 
 	}
 
