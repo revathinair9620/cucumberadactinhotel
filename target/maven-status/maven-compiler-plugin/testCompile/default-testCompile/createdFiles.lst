@@ -1,0 +1,9 @@
+parallel\BookAHotelPageSteps.class
+testrunners\MyTestRunner.class
+parallel\SelectHotelPageSteps.class
+parallel\SearchHotelPageSteps.class
+parallel\LoginPageSteps.class
+parallel\ScenarioOutlineSteps.class
+parallel\BookingConfirmationPageSteps.class
+parallel\ParallelRun.class
+parallel\ApplicationHooks.class
